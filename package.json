@@ -3,10 +3,13 @@
   "version": "1.0.1",
   "description": "Custom Node.js cartridge for OpenShift - sample application",
   "private": true,
-  "main": "start.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node --use_strict start.js"
+    "start": "node app.js"
   },
   "author": "Ionut-Cristian Florescu <ionut.florescu@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
