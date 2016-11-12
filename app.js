@@ -19,13 +19,13 @@ app.get('/', function (req, res) {
     var resp = "";
     if(req.query.goal)
     {
-        mute = req.query.mute;
-        bass = req.query.bass;
-        mono = req.query.mono;
+        mute = req.query.mute?req.query.mute:mute;
+        bass = req.query.bass?req.query.bass:bass;
+        mono = req.query.mono?req.query.mono:mono;
 
-        freq = req.query.freq;
+        freq = req.query.freq?req.query.freq:freq;
 
-        vol = req.query.vol;
+        vol = req.query.vol?req.query.vol:vol;
         
         resp+="mute: "+mute+"\nmono: "+mono+"\nbass: "+bass+"\nfrequence: "+freq+"\nvolume: "+vol
     }
