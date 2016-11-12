@@ -34,7 +34,9 @@ app.get('/', function (req, res) {
         resp+=mute+"-"+mono+"-"+bass+"-"+freq+"-"+vol;
     }
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.send(resp);
     
     
