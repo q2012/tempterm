@@ -6,7 +6,7 @@ var addr = env.NODE_IP || 'localhost';
 
 var app = express();
 
-var mute,mono,bass;
+var mute,mono,bass,enab;
 
 var freq;
 
@@ -19,6 +19,7 @@ app.get('/', function (req, res) {
     var resp = "";
     if(req.query.goal)
     {
+        enab = req.query.enab?req.query.enab:enab;
         mute = req.query.mute?req.query.mute:mute;
         bass = req.query.bass?req.query.bass:bass;
         mono = req.query.mono?req.query.mono:mono;
@@ -27,7 +28,7 @@ app.get('/', function (req, res) {
 
         vol = req.query.vol?req.query.vol:vol;
     }
-        resp+=mute+"-"+mono+"-"+bass+"-"+freq+"-"+vol;
+        resp+=mute+"-"+mono+"-"+bass+"-"+freq+"-"+vol+"-"+enab;
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
